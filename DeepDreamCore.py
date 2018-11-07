@@ -183,7 +183,7 @@ class DeepDream:
                 # Otherwise show a little progress-indicator.
                 print(". ", end="")
 
-        #print()
+        print()
         #print("Image after:")
         #plot_image(img)
         

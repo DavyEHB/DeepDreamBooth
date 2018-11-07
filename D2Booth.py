@@ -128,13 +128,16 @@ def callback_show():
 def main():
    
     view_finder = "Viewfinder"
+    last_image_viewer = "Latest Render"
      
     active = True
-    fullscreen = True
+    fullscreen = False
     
     cap_dev = init_camera(0)
     make_window(view_finder)
+    make_window(last_image_viewer)
     make_fullscreen(view_finder,fullscreen)
+    make_fullscreen(last_image_viewer,fullscreen)
     
     state = State()
     print(state)
@@ -173,6 +176,7 @@ def main():
         
         elif (s == State.RESET):
             print("Resetting")
+            cv2.imshow(last_image_viewer,frame)
             state.set_state(State.RUN)
         
         elif (s == State.SHOW):
